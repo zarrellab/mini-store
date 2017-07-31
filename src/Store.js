@@ -8,17 +8,30 @@ function Store() {
     return this
   }
 
+  const listeners = []
+
+  function subscribe(callback) {
+    listeners.push(callback)
+  }
+
   function dispatch(action) {
     const newState = reducer(state, action)
     console.log('dispatching:', action.type, 'prevState:', state, 'nextState:', newState)
     if (newState !== state) {
       state = newState
+      listeners.forEach(listener => listener())
     }
+  }
+
+  function getState() {
+    return state
   }
 
   return {
     createStore,
+    subscribe,
     dispatch,
+    getState,
   }
 }
 

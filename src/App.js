@@ -23,7 +23,7 @@ document.querySelector('#eggs').onclick = () => store.dispatch({ type: 'EGGS' })
 document.querySelector('#spam').onclick = () => store.dispatch({ type: 'SPAM' })
 
 function updateView() {
-  document.querySelector('#eggCount').innerText = store.getState().eggsCount
+  document.querySelector('#eggsCount').innerText = store.getState().eggsCount
   document.querySelector('#spamCount').innerText = store.getState().spamCount
 }
 

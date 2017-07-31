@@ -1,4 +1,4 @@
-import { createStore } from 'redux'
+import Store from './Store.js'
 
 
 const initialState = {
@@ -17,7 +17,7 @@ function reducer(state, action) {
   }
 }
 
-const store = createStore(reducer, initialState)
+const store = Store.createStore(reducer, initialState)
 
 document.querySelector('#eggs').onclick = () => store.dispatch({ type: 'EGGS' })
 document.querySelector('#spam').onclick = () => store.dispatch({ type: 'SPAM' })

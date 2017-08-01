@@ -9,11 +9,11 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'EGGS':
-      return {...state, eggsCount: state.eggsCount + 1}
+      return { ...state, eggsCount: state.eggsCount + 1 }
     case 'SPAM':
-      return {...state, spamCount: state.spamCount + 1}
+      return { ...state, spamCount: state.spamCount + 1 }
     default:
-    return state
+      return state
   }
 }
 
